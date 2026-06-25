@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | ProfitFlow</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+
+    <div class="dashboard-layout">
+        <!-- Injected by navigation.js -->
+        <div id="sidebar-container"></div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-header">
+                <div class="header-title">
+                    <h1 id="welcome-message">Welcome Back</h1>
+                    <p id="current-date">Today is ...</p>
+                </div>
+                <div class="header-actions">
+                    <a href="transactions.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.9rem;">
+                        <i class="fa-solid fa-plus"></i> New Transaction
+                    </a>
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-card-left">
+                        <span>Total Income</span>
+                        <h2 id="stat-income">₹0.00</h2>
+                    </div>
+                    <div class="stat-card-icon income">
+                        <i class="fa-solid fa-wallet"></i>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-left">
+                        <span>Total Expenses</span>
+                        <h2 id="stat-expenses">₹0.00</h2>
+                    </div>
+                    <div class="stat-card-icon expense">
+                        <i class="fa-solid fa-receipt"></i>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-left">
+                        <span>Net Balance</span>
+                        <h2 id="stat-balance">₹0.00</h2>
+                    </div>
+                    <div class="stat-card-icon balance">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-left">
+                        <span>Transactions</span>
+                        <h2 id="stat-transactions-count">0</h2>
+                    </div>
+                    <div class="stat-card-icon budgets">
+                        <i class="fa-solid fa-list-check"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Panels -->
+            <div class="dashboard-details-grid">
+                <!-- Recent Transactions -->
+                <div class="panel-card">
+                    <div class="panel-header">
+                        <h3>Recent Transactions</h3>
+                        <a href="transactions.html" style="font-size: 0.85rem; color: var(--emerald); font-weight: 600;">View All</a>
+                    </div>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Description</th>
+                                    <th>Category</th>
+                                    <th>Date</th>
+                                    <th>Amount</th>
+                                    <th>Type</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recent-transactions-list">
+                                <tr>
+                                    <td colspan="5" style="text-align: center; color: var(--text-light); padding: 30px;">
+                                        No recent transactions.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Budget Limits & Goals -->
+                <div>
+                    <!-- Monthly Budgets -->
+                    <div class="panel-card">
+                        <div class="panel-header">
+                            <h3>Budget Tracker</h3>
+                            <a href="budgets.html" style="font-size: 0.85rem; color: var(--emerald); font-weight: 600;">Manage</a>
+                        </div>
+                        <div id="dashboard-budgets-list">
+                            <p style="font-size: 0.9rem; color: var(--text-light); text-align: center; padding: 20px 0;">
+                                No active budgets set for this month.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Savings Goals -->
+                    <div class="panel-card">
+                        <div class="panel-header">
+                            <h3>Savings Goals</h3>
+                            <a href="goals.html" style="font-size: 0.85rem; color: var(--emerald); font-weight: 600;">View Goals</a>
+                        </div>
+                        <div class="goals-list" id="dashboard-goals-list">
+                            <p style="font-size: 0.9rem; color: var(--text-light); text-align: center; padding: 20px 0;">
+                                No savings goals set.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/api.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

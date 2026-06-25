@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savings Goals | ProfitFlow</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+
+    <div class="dashboard-layout">
+        <!-- Sidebar container -->
+        <div id="sidebar-container"></div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-header">
+                <div class="header-title">
+                    <h1>Savings Goals</h1>
+                    <p>Track your long-term savings targets and financial milestones</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-primary" id="open-goal-modal">
+                        <i class="fa-solid fa-plus"></i> Create Goal
+                    </button>
+                </div>
+            </div>
+
+            <!-- Goals Grid -->
+            <div class="budgets-grid" id="goals-grid-list" style="margin-top: 16px;">
+                <!-- Loaded dynamically by JS -->
+                <p style="text-align: center; color: var(--text-light); grid-column: 1 / -1; padding: 40px;">
+                    Loading goals...
+                </p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Create/Edit Savings Goal Modal -->
+    <div class="modal" id="goal-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="goal-modal-title">Create Savings Goal</h3>
+                <button class="modal-close" id="close-goal-modal">&times;</button>
+            </div>
+            
+            <form id="goal-form">
+                <input type="hidden" id="goal-id">
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="goal-name">Goal Name</label>
+                        <input type="text" id="goal-name" placeholder="e.g. New Macbook Pro" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="goal-target">Target Amount (INR)</label>
+                        <input type="number" id="goal-target" min="1" placeholder="0.00" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="goal-current">Current Saved (INR)</label>
+                        <input type="number" id="goal-current" min="0" defaultValue="0" placeholder="0.00">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="goal-date">Target Date</label>
+                        <input type="date" id="goal-date" required>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 12px; justify-content: flex-end;">
+                    <button type="button" class="btn btn-outline" id="cancel-goal-modal" style="padding: 10px 20px;">Cancel</button>
+                    <button type="submit" class="btn btn-primary" style="padding: 10px 20px;">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Quick Deposit Modal -->
+    <div class="modal" id="deposit-modal">
+        <div class="modal-content" style="max-width: 400px;">
+            <div class="modal-header">
+                <h3>Add Savings Contribution</h3>
+                <button class="modal-close" id="close-deposit-modal">&times;</button>
+            </div>
+            
+            <form id="deposit-form">
+                <input type="hidden" id="deposit-goal-id">
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label for="deposit-amount">Contribution Amount (INR)</label>
+                    <input type="number" id="deposit-amount" min="1" placeholder="e.g. 1000" required>
+                </div>
+
+                <div style="display: flex; gap: 12px; justify-content: flex-end;">
+                    <button type="button" class="btn btn-outline" id="cancel-deposit-modal" style="padding: 8px 16px;">Cancel</button>
+                    <button type="submit" class="btn btn-primary" style="padding: 8px 16px;">Add Savings</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/api.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/goals.js"></script>
+</body>
+</html>

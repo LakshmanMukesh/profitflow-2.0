@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budgets | ProfitFlow</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+
+    <div class="dashboard-layout">
+        <!-- Sidebar container -->
+        <div id="sidebar-container"></div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-header">
+                <div class="header-title">
+                    <h1>Monthly Budgets</h1>
+                    <p>Control your spending by setting limits on expense categories</p>
+                </div>
+            </div>
+
+            <!-- Configuration Row -->
+            <div class="dashboard-details-grid" style="grid-template-columns: 1fr 2fr; margin-bottom: 32px;">
+                <!-- Set Budget Form -->
+                <div class="panel-card" style="margin-bottom: 0;">
+                    <div class="panel-header">
+                        <h3>Set Budget</h3>
+                    </div>
+                    <form id="budget-form">
+                        <div class="form-grid" style="gap: 16px;">
+                            <div class="form-group">
+                                <label for="budget-month">Target Month</label>
+                                <input type="month" id="budget-month" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="budget-category">Category</label>
+                                <select id="budget-category" required>
+                                    <!-- Filled dynamically by JS -->
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="budget-amount">Limit Amount (INR)</label>
+                                <input type="number" id="budget-amount" min="1" placeholder="e.g. 5000" required>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px; padding: 12px;">
+                            Set Category Budget
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Monthly Overall Summary -->
+                <div class="panel-card" style="margin-bottom: 0; display: flex; flex-direction: column; justify-content: center; padding: 40px;">
+                    <div style="text-align: center;">
+                        <h4 style="color: var(--text-light); margin-bottom: 10px;">Monthly Budget Overview</h4>
+                        <h2 id="total-budgeted" style="font-size: 2.8rem; margin-bottom: 8px;">₹0.00</h2>
+                        <p style="color: var(--text-light); font-size: 0.95rem;">
+                            Total Spent: <strong id="total-spent" class="text-danger">₹0.00</strong> 
+                            (<span id="total-percentage">0%</span> utilized)
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Budgets Grid -->
+            <div class="panel-card">
+                <div class="panel-header">
+                    <h3>Active Category Limits</h3>
+                    <div class="filter-group">
+                        <label for="filter-month">View Month:</label>
+                        <input type="month" id="filter-month">
+                    </div>
+                </div>
+                
+                <div class="budgets-grid" id="budgets-grid-list">
+                    <!-- Loaded dynamically -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/api.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/budgets.js"></script>
+</body>
+</html>

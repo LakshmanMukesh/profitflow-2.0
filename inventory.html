@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management | ProfitFlow</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+
+    <div class="dashboard-layout">
+        <!-- Sidebar Container -->
+        <div id="sidebar-container"></div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-header">
+                <div class="header-title">
+                    <h1>Inventory Management</h1>
+                    <p>Track product quantities, costs, and selling prices to monitor stock value</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-primary" id="open-inventory-modal">
+                        <i class="fa-solid fa-plus"></i> Add Product
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stats Grid for Stock -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-card-left">
+                        <span>Total Items Stored</span>
+                        <h2 id="total-items">0</h2>
+                    </div>
+                    <div class="stat-card-icon balance">
+                        <i class="fa-solid fa-box"></i>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-left">
+                        <span>Total Inventory Cost</span>
+                        <h2 id="total-inventory-cost">₹0.00</h2>
+                    </div>
+                    <div class="stat-card-icon expense">
+                        <i class="fa-solid fa-money-bill-wave"></i>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-left">
+                        <span>Est. Potential Profit</span>
+                        <h2 id="total-potential-profit">₹0.00</h2>
+                    </div>
+                    <div class="stat-card-icon income">
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Table Panel -->
+            <div class="panel-card" style="margin-bottom: 0;">
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Product Name</th>
+                                <th>Quantity</th>
+                                <th>Unit Cost</th>
+                                <th>Selling Price</th>
+                                <th>Total Stock Value</th>
+                                <th>Est. Markup Profit</th>
+                                <th style="text-align: right;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="inventory-list">
+                            <tr>
+                                <td colspan="7" style="text-align: center; color: var(--text-light); padding: 40px;">
+                                    Loading stock list...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add/Edit Product Modal -->
+    <div class="modal" id="inventory-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="inventory-modal-title">Add New Product</h3>
+                <button class="modal-close" id="close-inventory-modal">&times;</button>
+            </div>
+            
+            <form id="inventory-form">
+                <input type="hidden" id="item-id">
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="item-name">Product Name</label>
+                        <input type="text" id="item-name" placeholder="e.g. Wireless Headphones" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="item-quantity">Quantity in Stock</label>
+                        <input type="number" id="item-quantity" min="0" placeholder="e.g. 20" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="item-cost">Purchase Cost per Unit (INR)</label>
+                        <input type="number" id="item-cost" min="0.01" step="0.01" placeholder="0.00" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="item-price">Selling Price per Unit (INR)</label>
+                        <input type="number" id="item-price" min="0.01" step="0.01" placeholder="0.00" required>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 12px; justify-content: flex-end;">
+                    <button type="button" class="btn btn-outline" id="cancel-inventory-modal" style="padding: 10px 20px;">Cancel</button>
+                    <button type="submit" class="btn btn-primary" style="padding: 10px 20px;">Save Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/api.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/inventory.js"></script>
+</body>
+</html>

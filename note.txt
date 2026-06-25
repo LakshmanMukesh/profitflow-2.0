@@ -1,0 +1,247 @@
+ProfitFlow 
+
+flow of the file :
+
+
+ProfitFlow/
+│
+├── index.html
+├── dashboard.html
+├── transactions.html
+├── budgets.html
+├── profits.html          
+├── inventory.html        
+├── reports.html          
+├── profile.html
+│
+├── css/
+│   └── style.css
+│
+├── js/
+│   ├── auth.js
+│   ├── dashboard.js
+│   ├── transactions.js
+│   ├── budgets.js
+│   ├── profits.js        
+│   ├── inventory.js      
+│   ├── reports.js        
+│   ├── analytics.js      
+│   └── supabase.js
+│
+├── assets/
+│
+└── database/
+    └── schema.sql        
+
+explanation : 
+
+
+📁 Root Files
+
+File	            Purpose
+
+index.html	        Landing page and login/signup entry point of ProfitFlow.
+dashboard.html	    Main dashboard showing income, expenses, profit, savings, and analytics overview.
+transactions.html	Manage and view all income and expense transactions.
+budgets.html	    Set monthly budgets and monitor spending limits.
+goals.html	        Create and track financial savings goals.
+inventory.html	    Manage products, stock quantities, purchase costs, and selling prices.
+profits.html	    Calculate and display revenue, expenses, and net profit reports.
+reports.html	    Generate, view, and export financial reports.
+profile.html	    Manage user profile, preferences, and account settings.
+note.txt	        Project notes, ideas, and development planning document.
+
+
+📂 CSS Folder
+
+File	            Purpose
+
+style.css	        Global styling, layout, responsiveness, themes, and UI components.
+
+📂 JS Folder
+
+File	            Purpose
+auth.js	            Handles user authentication, login, signup, and logout operations.
+dashboard.js	    Loads and updates dashboard statistics, summaries, and charts.
+transactions.js	    Performs CRUD operations for income and expense transactions.
+budgets.js	        Manages budget creation, updates, and spending alerts.
+goals.js	        Handles savings goal creation, tracking, and progress calculations.
+inventory.js	    Manages inventory items, stock levels, costs, and pricing data.
+profits.js	        Calculates revenue, expenses, gross profit, and net profit metrics.
+reports.js	        Generates financial reports and exports them as PDF or CSV.
+analytics.js	    Creates visual analytics using charts and financial trends.
+supabase.js	        Centralized Supabase configuration and database connection management.
+
+📂 Database Folder
+
+File	            Purpose
+
+schema.sql	        Contains all database table definitions, relationships, and initial setup queries.
+
+
+ProfitFlow is a complete financial management system that helps users track expenses, income, 
+budgets, inventory, savings goals, profits, and business analytics from a single dashboard.
+
+
+VERSION -1:
+
+stage 1 
+
+📌 Stage 1: Project Setup
+
+ Create project folder structure  !
+ Create all Version 1 HTML pages  !
+ Create CSS and JS files  !
+ Initialize Git repository ! 
+ Create Supabase project ! 
+ Connect Supabase to application 
+
+ 📌 Stage 2: Database Setup
+
+Create Tables :
+
+ profiles
+ transactions
+ budgets
+
+Configure :
+
+ Enable Authentication
+ Enable Row Level Security (RLS)
+ Create policies for users to access only their own data
+
+ 📌 Stage 3: Authentication Module
+
+Files
+
+index.html
+
+auth.js
+
+supabase.js
+
+Features
+
+ User Signup
+ User Login
+ User Logout
+ Session Management
+ Redirect after Login
+ Protect Dashboard Pages
+
+📌 Stage 4: Dashboard Module
+
+Files
+
+dashboard.html
+
+dashboard.js
+
+Features
+
+ Display Total Income
+ Display Total Expenses
+ Display Current Balance
+ Display Transaction Count
+ Recent Transactions Section
+ Welcome User Card
+
+📌 Stage 5: Transactions Module
+
+Files
+
+transactions.html
+
+transactions.js
+
+Features
+
+ Add Transaction
+ Edit Transaction
+ Delete Transaction
+ View Transaction List
+ Search Transactions
+ Filter by Type
+ Filter by Category
+ Sort by Date
+
+Categories
+
+Income
+
+ Salary
+ Freelance
+ Business
+ Other
+
+Expense
+
+ Food
+ Travel
+ Shopping
+ Education
+ Bills
+ Health
+
+📌 Stage 6: Budget Module
+
+Files
+
+budgets.html
+
+budgets.js
+
+Features
+ Create Budget
+ Update Budget
+ Delete Budget
+ Monthly Budget Tracking
+ Budget Utilization Percentage
+ Budget Warning Alert
+
+Example:
+
+Food Budget
+₹5000
+
+Spent
+₹4200
+
+Remaining
+₹800
+
+📌 Stage 7: Navigation & UI
+
+Common Layout
+
+ Navbar
+ Sidebar
+ Responsive Design
+ Dark Theme
+ Dashboard Cards
+ Form Styling
+ Table Styling
+
+📌 Stage 8: Testing
+
+ Signup Test
+ Login Test
+ Add Income Test
+ Add Expense Test
+ Budget Creation Test
+ Dashboard Calculation Test
+ Logout Test
+
+🎯 Version 1 Deliverables
+
+At the end of Version 1, the user should be able to:
+
+✅ Create Account
+✅ Login
+✅ Add Income
+✅ Add Expenses
+✅ View Balance
+✅ Manage Transactions
+✅ Set Budgets
+✅ Track Spending Against Budgets
+✅ Logout Securely
