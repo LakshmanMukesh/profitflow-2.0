@@ -1,0 +1,5 @@
+/* Inventory table overrides */
+.low-stock {
+    background-color: #fffbeb;
+    color: #d97706;
+}

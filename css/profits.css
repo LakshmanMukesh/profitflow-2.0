@@ -1,0 +1,56 @@
+/* Profits trend container */
+.trend-chart-container {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    border-radius: 20px;
+    padding: 24px;
+    color: var(--white);
+    margin-bottom: 32px;
+}
+
+.trend-bars {
+    display: flex;
+    height: 250px;
+    align-items: flex-end;
+    gap: 20px;
+    padding: 20px 0;
+    justify-content: space-around;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.trend-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    height: 100%;
+    justify-content: flex-end;
+}
+
+.trend-bar-wrapper {
+    display: flex;
+    height: 100%;
+    align-items: flex-end;
+    gap: 6px;
+    width: 100%;
+    justify-content: center;
+}
+
+.trend-bar {
+    width: 16px;
+    border-radius: 4px 4px 0 0;
+    transition: height 0.5s ease;
+}
+
+.trend-bar.income {
+    background-color: var(--emerald);
+}
+
+.trend-bar.expense {
+    background-color: #ef4444;
+}
+
+.trend-label {
+    font-size: 0.75rem;
+    color: var(--text-light);
+}

@@ -1,0 +1,25 @@
+/* index.html specific styles */
+
+.welcome-card {
+    border: none !important;
+}
+
+.welcome-card h2 {
+    font-weight: 700;
+}
+
+.welcome-card i {
+    pointer-events: none;
+}
+
+.feature-card h4 {
+    color: var(--black);
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.feature-card p {
+    color: var(--text-main);
+    font-size: 0.92rem;
+    line-height: 1.6;
+}

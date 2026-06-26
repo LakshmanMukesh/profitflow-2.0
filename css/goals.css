@@ -1,0 +1,12 @@
+/* Goals Grid */
+.goals-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.goal-card {
+    border: 1px solid #f1f5f9;
+    padding: 16px;
+    border-radius: 14px;
+}

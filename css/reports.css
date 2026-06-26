@@ -1,0 +1,17 @@
+/* Reports layout overrides for print */
+@media print {
+    body {
+        background-color: white;
+        color: black;
+    }
+    .sidebar {
+        display: none;
+    }
+    .main-content {
+        margin-left: 0;
+        padding: 0;
+    }
+    .filter-row, .header-actions {
+        display: none;
+    }
+}

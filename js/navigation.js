@@ -22,10 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sidebarContainer.innerHTML = `
         <div class="sidebar">
-            <div class="sidebar-logo">
+            <a href="index.html" class="sidebar-logo">
                 <img src="img/logo.png" alt="ProfitFlow" class="nav-logo">
                 Profit<span>Flow</span>
-            </div>
+            </a>
             
             <div class="sidebar-menu">
                 <a href="dashboard.html" class="${getLinkClass('dashboard.html')}">

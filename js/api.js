@@ -45,9 +45,8 @@ async function apiRequest(endpoint, options = {}) {
 function checkAuth() {
     const token = localStorage.getItem('profitflow_token');
     const isLoginPage = window.location.pathname.endsWith('login.html');
-    const isIndexPage = window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '';
     
-    if (!token && !isLoginPage && !isIndexPage) {
+    if (!token && !isLoginPage) {
         window.location.href = 'login.html';
     } else if (token && isLoginPage) {
         window.location.href = 'dashboard.html';

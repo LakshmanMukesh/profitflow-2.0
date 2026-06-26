@@ -1,0 +1,245 @@
+body.auth-body {
+    overflow: hidden;
+}
+
+/* --- SPLIT AUTH LAYOUT (login.html) --- */
+.auth-container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.auth-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f8fafc 0%, #ecfdf5 100%);
+    padding: 40px 24px;
+}
+
+.auth-right {
+    background: radial-gradient(circle at top left, rgba(16, 185, 129, 0.25), transparent 25%), linear-gradient(135deg, #07111f 0%, #0f172a 50%, #111827 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    padding: 24px;
+}
+
+.auth-card {
+    background: rgba(255, 255, 255, 0.96);
+    padding: 28px 32px;
+    width: 100%;
+    max-width: 470px;
+    border-radius: 30px;
+    box-shadow: 0 25px 60px rgba(15, 23, 42, 0.14);
+    border: 1px solid rgba(16, 185, 129, 0.12);
+}
+
+.auth-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.brand-logo {
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+}
+
+.brand-title {
+    font-size: 1.35rem;
+    margin-bottom: 2px;
+}
+
+.brand-subtitle {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.auth-heading {
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.auth-heading h2 {
+    margin-bottom: 8px;
+    font-size: 1.7rem;
+}
+
+.auth-heading p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.input-group {
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #dbe3ea;
+    border-radius: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    background: #f8fafc;
+}
+
+.input-group input:focus {
+    border-color: var(--emerald);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.12);
+    background: var(--white);
+}
+
+.auth-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    margin-bottom: 24px;
+}
+
+.auth-options a {
+    color: var(--emerald);
+    font-weight: 600;
+}
+
+.auth-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+    margin-bottom: 18px;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+    color: var(--text-light);
+    font-size: 0.85rem;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.divider:not(:empty)::before {
+    margin-right: .25em;
+}
+
+.divider:not(:empty)::after {
+    margin-left: .25em;
+}
+
+.social-login {
+    display: flex;
+    gap: 12px;
+}
+
+.social-login .btn {
+    flex: 1;
+    background: var(--light-gray);
+    color: var(--black);
+    border: 1px solid #e2e8f0;
+    box-shadow: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.social-login .btn:hover {
+    background: #e2e8f0;
+    transform: none;
+}
+
+.auth-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.95rem;
+    color: var(--text-main);
+}
+
+.auth-link-btn {
+    background: none;
+    border: none;
+    color: var(--emerald);
+    font-weight: 700;
+    cursor: pointer;
+    padding: 0;
+    font-size: inherit;
+}
+
+.auth-link-btn:hover {
+    text-decoration: underline;
+}
+
+.auth-banner-card {
+    max-width: 560px;
+    width: 100%;
+    padding: 18px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 40px rgba(2, 6, 23, 0.2);
+}
+
+.banner-image {
+    width: 100%;
+    max-height: 280px;
+    border-radius: 18px;
+    object-fit: cover;
+    margin-bottom: 16px;
+}
+
+.banner-content h1 {
+    color: var(--white);
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+}
+
+.banner-content p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+.banner-content ul {
+    display: grid;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.banner-content li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.banner-content li i {
+    color: var(--emerald);
+}
+
+/* Responsive */
+@media(max-width: 900px) {
+    .auth-container {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-right {
+        order: -1;
+    }
+}
