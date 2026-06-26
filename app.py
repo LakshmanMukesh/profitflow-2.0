@@ -10,11 +10,18 @@ app = Flask(__name__, static_folder='.', static_url_path='')
 CORS(app)
 
 # Database Configuration
-db_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'database')
-if not os.path.exists(db_dir):
-    os.makedirs(db_dir)
+db_url = os.environ.get('DATABASE_URL')
+if db_url:
+    # SQLAlchemy requires 'postgresql://' instead of 'postgres://'
+    if db_url.startswith("postgres://"):
+        db_url = db_url.replace("postgres://", "postgresql://", 1)
+    app.config['SQLALCHEMY_DATABASE_URI'] = db_url
+else:
+    db_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'database')
+    if not os.path.exists(db_dir):
+        os.makedirs(db_dir)
+    app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{os.path.join(db_dir, 'database.db')}"
 
-app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{os.path.join(db_dir, 'database.db')}"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = secrets.token_hex(24)
 
